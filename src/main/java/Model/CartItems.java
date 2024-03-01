@@ -37,7 +37,7 @@ public class CartItems {
 
     @Override
     public String toString() {
-        return "CartItems({" + "CartItemsID=" + CartItemsID + ", MusicID=" + MusicID + '}';
+        return "CartItems{" + "CartItemsID=" + CartItemsID + ", MusicID=" + MusicID + '}';
     }
     
     
