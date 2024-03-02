@@ -10,6 +10,6 @@ package Controller;
  */
 public class Hello {
     public static void main(Striádasdg[] args)s {
-        System.out.prsintln(""); 
+        System.out.println("");
    }
 }
