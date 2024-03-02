@@ -9,7 +9,7 @@ package Controller;
  * @author Manh
  */
 public class Hello {
-    public static void main(Striádasdg[] args)s {
-        System.out.prsintln(""); 
-   }
+    public static void main(String[] args) {
+        System.out.println("hello");
+    }
 }
