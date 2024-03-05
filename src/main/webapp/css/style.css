@@ -932,30 +932,33 @@ h3 {
   }
 }
 
-/* line 68, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
-.header-area .main-header-area .social_icon ul li {
-  display: inline-block;
+.custom-col-lg-3 {
+  width: 25%; /* Chỉnh kích thước cột tương ứng với kích thước cần thiết */
+  float: left; /* Sử dụng float để cột nằm bên cạnh nhau */
 }
 
-/* line 70, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
-.header-area .main-header-area .social_icon ul li a {
-  display: inline-block;
-  width: 35px;
-  height: 35px;
+.connection-page {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 10px; /* Khoảng cách dưới của phần tử .connection-page */
   color: #fff;
-  text-align: center;
-  line-height: 35px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 1px solid #41393A;
-  font-size: 14px;
-  margin-left: 6px;
 }
 
-/* line 81, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
-.header-area .main-header-area .social_icon ul li a:hover {
-  color: #ED1B1B;
+.connection-page .Login-Button,
+.connection-page .Signin-Button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.3s ease-in-out;
+  cursor: pointer; /* Đổi con trỏ thành hình bàn tay khi di chuột qua */
+}
+
+.connection-page .Login-Button:hover,
+.connection-page .Signin-Button:hover {
+  border-color: orange;
 }
 
 /* line 88, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_header.scss */
