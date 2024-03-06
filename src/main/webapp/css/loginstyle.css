@@ -1,15 +1,78 @@
 body {
   width: 100%; /* Chiều rộng 100% của trình duyệt */
-  max-width: 100%; /* Chiều rộng tối đa là 600px */
-  height: 900px;
-  background: rgb(0, 99, 255);
+  max-width: 100%;
+  height: 1000px;
+  background: rgb(255, 0, 0);
   background: linear-gradient(
-    81deg,
-    rgba(0, 99, 255, 1) 0%,
-    rgba(163, 98, 210, 1) 87%
+    279deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(4, 0, 73, 1) 56%,
+    rgba(2, 0, 36, 1) 100%
   );
   background-repeat: no-repeat;
   background-size: cover;
 }
+.login {
+  margin-top: 174px;
+  border-radius: 0.3%;
+}
 .login-content {
+}
+
+.login-form {
+  height: 500px;
+}
+.login-from-content {
+  margin: 120px 0 0 150px;
+}
+.notif h1 {
+  background: #000000;
+  background: linear-gradient(to right, #000000 0%, #cf1512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.notif p {
+  color: #fff;
+  text-align: justify;
+}
+.userform {
+  width: 50%;
+  height: 40px;
+  text-decoration: none;
+}
+
+.userform2 {
+  width: 50%;
+  height: 40px;
+}
+input:focus {
+  outline: none;
+}
+input[type="text"]::placeholder {
+  color: #999; /* Màu của placeholder */
+}
+input[type="password"]::placeholder {
+  color: #999; /* Màu của placeholder */
+}
+#mycheckbox {
+  margin-bottom: 15px;
+}
+.sign-up {
+  text-decoration: none;
+}
+.sign-up:hover {
+  color: blueviolet;
+}
+.checkbox label {
+  color: #050062;
+}
+.sign-up-nav {
+  margin: 0 0 15px 0;
+}
+.sign-up-nav label {
+  color: #050062;
+}
+.sign-up-nav a {
+  margin-left: 38px;
+  color: #121fcf;
 }
