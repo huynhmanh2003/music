@@ -1,0 +1,15 @@
+body {
+  width: 100%; /* Chiều rộng 100% của trình duyệt */
+  max-width: 100%; /* Chiều rộng tối đa là 600px */
+  height: 900px;
+  background: rgb(0, 99, 255);
+  background: linear-gradient(
+    81deg,
+    rgba(0, 99, 255, 1) 0%,
+    rgba(163, 98, 210, 1) 87%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.login-content {
+}
