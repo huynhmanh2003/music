@@ -25,7 +25,7 @@
                     <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
                   </div>
   
-                  <form action="login.php" method="POST">
+                  <form action="SignIn" method="POST">
                     <div class="form-group">
                       <label for="username">Username</label>
                       <input type="text" id="username" name="username" class="form-control" placeholder="Phone number or email address" />

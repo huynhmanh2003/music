@@ -143,12 +143,28 @@ public class UserDao {
             }
         }
     }
+    public boolean checkUsername(String u,String p){
+        PreparedStatement stmt = null;
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = null;
+        boolean rt = true;
+        try {
+            con = db.connect();
+            String query = "select * from [User] WHERE UserLoginName LIKE '%"+u+"%'";
+            ResultSet rs = con.prepareStatement(query).executeQuery();
+            if(rs.next()){
+                if(rs.getString(3).equals(p)){
+                    return true;
+                }
+            }
+        } catch (SQLException ex) {
+            return false;
+        }
+        return false;
+}
 
     public static void main(String[] args) {
-        UserDao u = new UserDao();
-        ArrayList<User> arr = new ArrayList<>();
-        arr = u.getUser();
-        System.out.println(arr);
+
 
     }
 }

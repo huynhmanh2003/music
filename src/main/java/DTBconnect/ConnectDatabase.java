@@ -11,8 +11,8 @@ public class ConnectDatabase {
     public Connection connect() {
         String drivername = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String url = "jdbc:sqlserver://127.0.0.1:1433;databaseName=MusicPay;encrypt=true;trustServerCertificate=true;";
-        String user = "sa1";
-        String pass = "321";
+        String user = "sa";
+        String pass = "123456";
         try {
             Class.forName(drivername);
             return DriverManager.getConnection(url, user, pass);
