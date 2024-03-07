@@ -80,8 +80,8 @@
                 <div class="custom-col-lg-3">
                   <div class="Login-SignIn text-right">
                     <ul class="Login-SignIn connection-page">
-                      <li><a href="#" class="Login-Button"></a>Login</li>
-                      <li><a href="#" class="Signin-Button"></a>Sign In</li>
+                        <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
+                        <li><a href="./RegisterHome.jsp" class="Signin-Button">Sign In</a></li>
                     </ul>
                   </div>
                 </div>
