@@ -43,7 +43,7 @@
   
                     <div class="d-flex align-items-center justify-content-center pb-4">
                       <div class="mr-2">Don't have an account?</div>
-                      <button type="button" class="btn btn-outline-danger">Create new</button>
+                      <button type="button" class="btn btn-outline-danger "><a  class="regis-btn" style="text-decoration: none; " href="./RegisterHome.jsp">Create new</a></button>
                     </div>
   
                   </form>
