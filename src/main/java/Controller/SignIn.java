@@ -48,14 +48,16 @@ public class SignIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String user ="";
-        String pass ="";
-        user = request.getParameter("username");
-        pass = request.getParameter("password");
+//        String user ="";
+//        String pass ="";
+       String user = request.getParameter("username");
+       String pass = request.getParameter("password");
         UserDao u1 = new UserDao();
         if(u1.checkUsername(user, pass)){
-            PrintWriter out = response.getWriter();
-            out.print("con cac");
+            request.setAttribute("Username", u1);
+            request.getRequestDispatcher("homepage.jsp").forward(request, response);
+//            PrintWriter out = response.getWriter();
+//            out.print("con cac");
         }else{
             PrintWriter out = response.getWriter();
             out.print("clditmemay");

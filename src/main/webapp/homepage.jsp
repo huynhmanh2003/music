@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="./css/owl.carousel.min.css" />
         <link rel="stylesheet" href="./css/slick.css" />
         <link rel="stylesheet" href="./css/slicknav.css" />
-        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/homepage.css" />
         <link rel="stylesheet" href="./css/themify-icons.css" />
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     </head>
@@ -80,8 +80,10 @@
                                 <div class="custom-col-lg-3">
                                     <div class="Login-SignIn text-right">
                                         <ul class="Login-SignIn connection-page">
-                                            <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
-                                            <li><a href="./RegisterHome.jsp" class="Signin-Button">Sign In</a></li>
+                                            <li><a href="#" class="ti-shopping-cart Login-Button"> </a></li>
+                                            <li><a href="#" class="Signin-Button"><%  String user = (String) request.getAttribute("Username");
+            out.println("xin chao " + user);
+        %></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -309,7 +311,6 @@
                                     <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
