@@ -81,9 +81,7 @@
                                     <div class="Login-SignIn text-right">
                                         <ul class="Login-SignIn connection-page">
                                             <li><a href="#" class="ti-shopping-cart Login-Button"> </a></li>
-                                            <li><a href="#" class="Signin-Button"><%  String user = (String) request.getAttribute("Username");
-            out.println("xin chao " + user);
-        %></a></li>
+                                            <li><a href="#" class="Signin-Button">hello  user </a></li>
                                         </ul>
                                     </div>
                                 </div>
