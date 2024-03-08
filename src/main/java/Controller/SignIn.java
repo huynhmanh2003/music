@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -53,11 +54,11 @@ public class SignIn extends HttpServlet {
        String user = request.getParameter("username");
        String pass = request.getParameter("password");
         UserDao u1 = new UserDao();
-        if(u1.checkUsername(user, pass)){
-            request.setAttribute("Username", u1);
+         if(u1.checkUsername(user, pass)){
+             HttpSession session  = request.getSession();
+            session.setAttribute("usersession", user);
+            session.setAttribute("passwordsession", pass);
             request.getRequestDispatcher("homepage.jsp").forward(request, response);
-//            PrintWriter out = response.getWriter();
-//            out.print("con cac");
         }else{
             PrintWriter out = response.getWriter();
             out.print("clditmemay");
