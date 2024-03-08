@@ -136,7 +136,7 @@
                             </div>
                             <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >Buy album</a>
                                     <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
