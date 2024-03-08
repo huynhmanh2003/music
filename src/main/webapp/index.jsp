@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" style="scroll-behavior: smooth;">
   <head>
     <meta charset="utf-8" />
     <!--    <meta http-equiv="x-ua-compatible" content="ie=edge">-->
@@ -47,8 +47,8 @@
               <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-2">
                   <div class="logo">
-                    <a href="index.html">
-                      <img src="img/logo.png" alt="" />
+                    <a href="index.jsp">
+                        <img style="width: 50%" src="img/Music.png" alt="" />    
                     </a>
                   </div>
                 </div>
@@ -56,7 +56,7 @@
                   <div class="main-menu d-none d-lg-block">
                     <nav>
                       <ul id="navigation">
-                        <li><a class="active" href="index.html">home</a></li>
+                        <li><a class="active" href="index.jsp">home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="track.html">tracks</a></li>
                         <li>
@@ -72,7 +72,7 @@
                             <li><a href="elements.html">elements</a></li>
                           </ul>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                       </ul>
                     </nav>
                   </div>
@@ -80,8 +80,16 @@
                 <div class="custom-col-lg-3">
                   <div class="Login-SignIn text-right">
                     <ul class="Login-SignIn connection-page">
-                        <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
-                        <li><a href="./RegisterHome.jsp" class="Signin-Button">Sign In</a></li>
+                        <%
+                            if(session.getAttribute("usersession")==null||session.getAttribute("passwordsession")==null){%>
+                            <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
+                            <li><a href="./RegisterHome.jsp" class="Signin-Button">Sign In</a></li>
+                            <%}else{%>
+                            <li><span >Welcome ${usersession} </span></li>
+                            <li><a href="./signOut" class="Signin-Button">Sign Out</a></li>
+                            <%}
+                        %>
+                        
                     </ul>
                   </div>
                 </div>
@@ -103,7 +111,7 @@
           <div class="row">
             <div class="col-xl-12">
               <div class="slider_text text-center">
-                <h3>Musician</h3>
+                <h3>Music</h3>
               </div>
             </div>
           </div>
@@ -189,7 +197,7 @@
                 <div class="video">
                   <a
                     class="popup-video"
-                    href="https://www.youtube.com/watch?v=Hzmp3z6deF8"
+                    href="https://www.youtube.com/embed/dQw4w9WgXcQ?si=R_tDdC-OVjiM5nbU"
                   >
                     <i class="fa fa-play"></i>
                   </a>
@@ -464,49 +472,29 @@
     </div>
     <!--/ gallery -->
 
-    <!-- contact_rsvp -->
-    <div class="contact_rsvp">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-12">
-            <div class="text text-center">
-              <h3>Contact For RSVP</h3>
-              <a class="boxed-btn3" href="contact.html">Contact Me</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--/ contact_rsvp -->
 
     <!-- footer start -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
       <div class="footer_top">
         <div class="container">
           <div class="row">
             <div class="col-xl-6 col-md-6">
               <div class="footer_widget">
-                <h3 class="footer_title">Services</h3>
-                <div class="subscribe-from">
-                  <form action="#">
-                    <input type="text" placeholder="Enter your mail" />
-                    <button type="submit">Subscribe</button>
-                  </form>
-                </div>
                 <p class="sub_text">
-                  Esteem spirit temper too say adieus who direct esteem esteems
-                  luckily.
+                  "Without music, life would be a mistake."
+                  <br>
+ Friedrich Nietzsche, Twilight of the Idols
                 </p>
               </div>
             </div>
             <div class="col-xl-5 col-md-5 offset-xl-1">
               <div class="footer_widget">
-                <h3 class="footer_title">Contact Me</h3>
+                <h3 class="footer_title">Contact US</h3>
                 <ul>
-                  <li><a href="#">conbusi@support.com </a></li>
-                  <li><a href="#">+10 873 672 6782 </a></li>
+                  <li><a href="#">hehehe@fpt.edu.vn </a></li>
+                  <li><a href="#">+0766504809 </a></li>
                   <li>
-                    <a href="#">600/D, Green road, Kings Garden NewYork-6732</a>
+                    <a href="https://maps.app.goo.gl/P6mGqjvEMvMDtYbf9">FPT University</a>
                   </li>
                 </ul>
                 <div class="socail_links">
@@ -554,10 +542,9 @@
                 <script>
                   document.write(new Date().getFullYear());
                 </script>
-                All rights reserved | This template is made with
+                All rights reserved | This Web is made with
                 <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <a href="https://www.facebook.com/quydn2003" target="_blank">NguyenDangQuy</a>
               </p>
             </div>
             <div class="col-xl-5 col-md-6">
