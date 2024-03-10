@@ -28,17 +28,53 @@ public class UserDao {
         Connection con = null;
         ArrayList<User> list = new ArrayList<>();
         ConnectDatabase db = new ConnectDatabase();
+        PreparedStatement stmt = null;
         try {
             con = db.connect();
             String query = "select * from [User]";
-            ResultSet rs = con.prepareStatement(query).executeQuery();
+            stmt = con.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 list.add(new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return list;
+    }
+//Kiểm tra xem thử tên đăng nhập đã tồn tại chưa
+
+    public boolean check(User u1) {
+        PreparedStatement stmt = null;
+        ConnectDatabase db = new ConnectDatabase();
+        Connection con = null;
+        boolean rt = true;
+        ResultSet rs = null;
+        try {
+            con = db.connect();
+            String query = "select * from [User]";
+            stmt = con.prepareStatement(query);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                if (rs.getString(2).equals(u1.getUserLoginName())) {
+                    return false;
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        return true;
     }
 
     public void addUser(User u1) {
@@ -47,14 +83,14 @@ public class UserDao {
         ConnectDatabase db = new ConnectDatabase();
         try {
             con = db.connect();
-            String query = "INSERT INTO [User] (id, username, password, email, firstName, lastName) VALUES (?, ?, ?, ?, ?, ?)";
+            String query = "insert into [User](UserLoginName,UserLoginPassword,UserFirstName,UserLastName,[Role])\n"
+                    + "values(?,?,?,?,?);";
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, u1.getUserID());
-            stmt.setString(2, u1.getUserLoginName());
-            stmt.setString(3, u1.getUserLoginPassword());
-            stmt.setString(4, u1.getUserFirstName());
-            stmt.setString(5, u1.getUserLastName());
-            stmt.setString(6, u1.getRole());
+            stmt.setString(1, u1.getUserLoginName());
+            stmt.setString(2, u1.getUserLoginPassword());
+            stmt.setString(3, u1.getUserFirstName());
+            stmt.setString(4, u1.getUserLastName());
+            stmt.setString(5, u1.getRole());
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("User added successfully!");
@@ -143,17 +179,18 @@ public class UserDao {
             }
         }
     }
-    public boolean checkUsername(String u,String p){
+
+    public boolean checkUsername(String u, String p) {
         PreparedStatement stmt = null;
         ConnectDatabase db = new ConnectDatabase();
         Connection con = null;
         boolean rt = true;
         try {
             con = db.connect();
-            String query = "select * from [User] WHERE UserLoginName LIKE '%"+u+"%'";
+            String query = "select * from [User] WHERE UserLoginName LIKE '%" + u + "%'";
             ResultSet rs = con.prepareStatement(query).executeQuery();
-            if(rs.next()){
-                if(rs.getString(3).equals(p)){
+            if (rs.next()) {
+                if (rs.getString(3).equals(p)) {
                     return true;
                 }
             }
@@ -161,10 +198,11 @@ public class UserDao {
             return false;
         }
         return false;
-}
+    }
 
     public static void main(String[] args) {
-
-
+        UserDao u1 = new UserDao();
+//        u1.check(new User(0, "huynhmanh2003", "123123", "huynh", "manh", "admin"));
+//u1.addUser(new User(0, "huynh", "123123", "huynh", "manh", "guess"));
     }
 }
