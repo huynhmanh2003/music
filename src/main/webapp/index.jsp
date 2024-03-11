@@ -83,9 +83,9 @@
                         <%
                             if(session.getAttribute("usersession")==null||session.getAttribute("passwordsession")==null){%>
                             <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
-                            <li><a href="./RegisterHome.jsp" class="Signin-Button">Sign In</a></li>
+                            <li><a href="./RegisterHome.jsp" class="Signin-Button">Register</a></li>
                             <%}else{%>
-                            <li><span >Welcome ${usersession} </span></li>
+                            <li><span >Welcome:  ${usersession} </span></li>
                             <li><a href="./signOut" class="Signin-Button">Sign Out</a></li>
                             <%}
                         %>

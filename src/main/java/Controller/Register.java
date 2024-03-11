@@ -5,6 +5,7 @@
 package Controller;
 
 import DAO.UserDao;
+import Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,15 +13,31 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author ADMIN
+ * @author Manh
  */
-@WebServlet(name = "SignIn", urlPatterns = {"/SignIn"})
-public class SignIn extends HttpServlet {
+@WebServlet(name = "Register", urlPatterns = {"/Register"})
+public class Register extends HttpServlet {
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String userfname = request.getParameter("userFirstName");
+        String userlname = request.getParameter("userLastName");
+        String username = request.getParameter("userName");
+        String userpassword = request.getParameter("userPassword");
+        // Hồi làm phần phân quyền ở đây
+        User a1 = new User(0, username, userpassword, userfname, userlname, "Guess");
+        UserDao d1 = new UserDao();
+        if(d1.check(a1)){
+            d1.addUser(a1);
+            request.getRequestDispatcher("Welcome.jsp").forward(request, response);
+        }else{
+            PrintWriter out = response.getWriter();
+            out.print("ditconmemay");
+        }
+    }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -38,32 +55,15 @@ public class SignIn extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet SignIn</title>");            
+            out.println("<title>Servlet Register</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SignIn at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     }
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String user ="";
-        String pass ="";
-        user = request.getParameter("username");
-        pass = request.getParameter("password");
-        UserDao u1 = new UserDao();
-        if(u1.checkUsername(user, pass)){
-            HttpSession session  = request.getSession();
-            session.setAttribute("usersession", user);
-            session.setAttribute("passwordsession", pass);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        }else{
-            request.setAttribute("sign", "true");
-            request.getRequestDispatcher("LoginHome.jsp").forward(request, response);
-        }
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
