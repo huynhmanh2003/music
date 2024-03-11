@@ -63,6 +63,7 @@
                         errorMessage.innerHTML = "Please enter both username and password.";
                         return false; // Prevent form submission
                       }
+                      
                     return true; // Allow form submission
                     }
                   </script>
