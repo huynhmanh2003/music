@@ -6,10 +6,6 @@ package DAO;
 
 import DTBconnect.ConnectDatabase;
 import Model.User;
-import Model.Music;
-import Model.MusicCart;
-import Model.CartItems;
-import Model.UserMusic;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -200,9 +196,9 @@ public class UserDao {
         return false;
     }
 
-    public static void main(String[] args) {
-        UserDao u1 = new UserDao();
-//        u1.check(new User(0, "huynhmanh2003", "123123", "huynh", "manh", "admin"));
-//u1.addUser(new User(0, "huynh", "123123", "huynh", "manh", "guess"));
-    }
+//    public static void main(String[] args) {
+//        UserDao u1 = new UserDao();
+////        u1.check(new User(0, "huynhmanh2003", "123123", "huynh", "manh", "admin"));
+////u1.addUser(new User(0, "huynh", "123123", "huynh", "manh", "guess"));
+//    }
 }
