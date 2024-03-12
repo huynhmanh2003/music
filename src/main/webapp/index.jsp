@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="./css/slicknav.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/themify-icons.css" />
+    
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
   </head>
 
@@ -142,11 +143,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-md-3">
-                <div class="music_btn">
-                  <a href="#" class="boxed-btn">buy albam</a>
-                </div>
-              </div>
+              <div class="col-xl-3 col-md-3 btn-addShopCart-music">
+                                <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
+                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                </div>
+                            </div>
             </div>
           </div>
         </div>
@@ -310,11 +312,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-md-3">
-                <div class="music_btn">
-                  <a href="#" class="boxed-btn">buy albam</a>
-                </div>
-              </div>
+              <div class="col-xl-3 col-md-3 btn-addShopCart-music">
+                                <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
+                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                </div>
+                            </div>
             </div>
           </div>
         </div>
@@ -337,11 +340,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-md-3">
-                <div class="music_btn">
-                  <a href="#" class="boxed-btn">buy albam</a>
-                </div>
-              </div>
+              <div class="col-xl-3 col-md-3 btn-addShopCart-music">
+                                <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
+                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                </div>
+                            </div>
             </div>
           </div>
         </div>
@@ -364,11 +368,12 @@
                   </div>
                 </div>
               </div>
-              <div class="col-xl-3 col-md-3">
-                <div class="music_btn">
-                  <a href="#" class="boxed-btn">buy albam</a>
-                </div>
-              </div>
+              <div class="col-xl-3 col-md-3 btn-addShopCart-music">
+                                <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
+                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                </div>
+                            </div>
             </div>
           </div>
         </div>
