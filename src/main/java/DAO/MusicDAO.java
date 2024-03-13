@@ -28,7 +28,7 @@ public class MusicDAO {
             ResultSet rs = con.prepareStatement(query).executeQuery();
             while (rs.next()) {
                 // Assuming Music class has appropriate constructor and getters
-                list.add(new Music(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4)));
+                list.add(new Music(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getString(5), rs.getString(6)));
             }
         } catch (SQLException ex) {
             Logger.getLogger(UserDao.class.getName()).log(Level.SEVERE, null, ex);
@@ -56,6 +56,8 @@ public class MusicDAO {
             stmt.setString(2, m1.getMusicName());
             stmt.setString(3, m1.getArtist());
             stmt.setDouble(4, m1.getPrice());
+            stmt.setString(5, m1.getLinkToImage());
+            stmt.setString(6, m1.getLinkToSong());
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Music added successfully!");
@@ -121,6 +123,8 @@ public class MusicDAO {
             stmt.setString(2, m1.getMusicName());
             stmt.setString(3, m1.getArtist());
             stmt.setDouble(4, m1.getPrice());
+            stmt.setString(5, m1.getLinkToImage());
+            stmt.setString(6, m1.getLinkToSong());
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Music updated successfully!");
