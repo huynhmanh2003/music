@@ -64,19 +64,7 @@
                                                 <li><a class="active" href="index.jsp">home</a></li>
                                                 <li><a href="about.html">About</a></li>
                                                 <li><a href="track.html">tracks</a></li>
-                                                <li>
-                                                    <a href="#">blog <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">blog</a></li>
-                                                        <li><a href="single-blog.html">single-blog</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">pages <i class="ti-angle-down"></i></a>
-                                                    <ul class="submenu">
-                                                        <li><a href="elements.html">elements</a></li>
-                                                    </ul>
-                                                </li>
+                                                
                                                 <li><a href="#contact">Contact</a></li>
                                             </ul>
                                         </nav>
@@ -149,8 +137,8 @@
                             </div>
                             <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
-                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#button" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -320,10 +308,10 @@
                                 </div>
                                 <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                     <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                        <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                        <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
                                         <form action="Buy" method="post">
                                             <input type="hidden" name="musicID" value="${music.getMusicID()}">
-                                            <input type="submit" class="boxed-btn add-to-cart-btn"style=" margin-left: 10px;border-radius: 5px;" name="name" value="add to cart">
+                                            <input type="submit" class="boxed-btn  add-to-cart-btn"style=" margin-left: 10px;border-radius: 5px;" name="name" value="add to cart">
                                         </form>
                                     </div>
                                 </div>
@@ -499,8 +487,7 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
                                 <script>
-                                    document.write(new Date().getFullYear());
-                                </script>
+                                    document.write(new Date().getFullYear());                                </script>
                                 All rights reserved | This Web is made with
                                 <i class="fa fa-heart-o" aria-hidden="true"></i> by
                                 <a href="https://www.facebook.com/quydn2003" target="_blank">NguyenDangQuy</a>
@@ -522,6 +509,44 @@
             </div>
         </footer>
         <!--/ footer end  -->
+
+
+        <div class="modal js-modal">
+            <div class="modal-container js-modal-container">
+                <div class="modal-close js-modal-close">
+                    <i class="ti-close"></i>
+                </div>
+                <header class="modal-header">
+                    <i class="modal-heading-icon ti-bag"></i>
+                    Music
+                </header>
+                <div class="modal-body">
+                    <div class="modal-content">
+                        <img src="./img/Music.png" alt="">
+                        <a href="">nameSong:</a>
+                        <a href="">nghe si:</a>
+                        <a href="">Price = 300.000d</a>
+                    </div>
+                    <div class="modal-content" id="payment-button-container">
+                        <label for="ticket-email" class="modal-label">
+                            <i class="ti-key"></i>
+                            YourPassword
+                        </label>
+                        <input id="ticket-email" type="text" class="modal-input" placeholder="Enter YourPassword...">
+
+                        <button id="buy-tickets">
+                            <a href="#" style="color: #fff;">Pay</a>
+                            <i class="ti-check"></i>
+                        </button>
+                    </div>
+                    <div class="modal-content" id="success-message" style="display: none;color: green;font-size: larger;">
+                        Payment Successful!
+                        <i class="ti-face-smile"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- link that opens popup -->
 
@@ -564,6 +589,75 @@
                                     $(function () {
                                         $("audio").audioPlayer({});
                                     });
+        </script>
+
+        <script>
+            const buyBtns = document.querySelectorAll('.js-buy-tickets');
+            const modal = document.querySelector('.modal')
+            const modalClose = document.querySelector('.js-modal-close')
+            const modalContainer = document.querySelector('.js-modal-container')
+
+            function showBuyTicket() {
+                modal.classList.add('open')
+            }
+
+            function hideBuyTicket() {
+                modal.classList.remove('open')
+            }
+
+            for (const buyBtn of buyBtns) {
+                buyBtn.addEventListener('click', showBuyTicket)
+            }
+
+            modalClose.addEventListener('click', hideBuyTicket)
+
+            modal.addEventListener('click', hideBuyTicket)
+
+            modalContainer.addEventListener('click', function (event) {
+                event.stopPropagation()
+            })
+
+
+
+        </script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var payButton = document.getElementById("buy-tickets");
+                payButton.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    payButton.style.display = "none";
+                    var successMessage = document.getElementById("success-message");
+                    successMessage.style.display = "block";
+
+                    // ?n ?i ph?n nh?p m?t kh?u
+                    var passwordField = document.getElementById("ticket-email");
+                    passwordField.style.display = "none";
+                    var passwordLabel = document.querySelector("label[for=ticket-email]");
+                    passwordLabel.style.display = "none";
+                });
+
+                var modalCloseButton = document.querySelector(".js-modal-close");
+                modalCloseButton.addEventListener("click", function () {
+                    resetModal();
+                });
+
+                function resetModal() {
+                    var payButton = document.getElementById("buy-tickets");
+                    payButton.style.display = "block";
+                    var successMessage = document.getElementById("success-message");
+                    successMessage.style.display = "none";
+
+                    // Hi?n th? l?i ph?n nh?p m?t kh?u
+                    var passwordField = document.getElementById("ticket-email");
+                    passwordField.style.display = "block";
+                    var passwordLabel = document.querySelector("label[for=ticket-email]");
+                    passwordLabel.style.display = "block";
+
+                    // Xóa d? li?u ?ã nh?p trong ô m?t kh?u
+                    passwordField.value = "";
+                }
+            });
         </script>
     </body>
 </html>
