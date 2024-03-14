@@ -7316,3 +7316,114 @@ h6 {
 }
 
 /*# sourceMappingURL=style.css.map */
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0 ,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+ 
+  /* tam an cua so modal */
+}
+.modal-container{
+  background: #fff;
+  width: 900px;
+  min-height: 200px;
+  position: relative;
+  max-width: calc(100% - 32px);
+  animation: modalFaceIn ease 0.5s;
+  border-radius: 5px
+}
+
+.modal-body img {
+  max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của hộp modal */
+  max-height: 200px; /* Thiết lập chiều cao tối đa của hình ảnh */
+  display: block; /* Đảm bảo hình ảnh được căn giữa trong hộp modal */
+  margin: 0 auto;
+  padding-right: 200px;
+}
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-content {
+  flex: 1;
+  margin: 0 10px; /* Điều chỉnh khoảng cách giữa các phần tử */
+}
+.modal-header{
+  background: #ED1B1B;
+  height: 130px;
+  font-size: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px
+}
+.modal-heading-icon{
+  margin-right: 16px;
+}
+.modal.open{
+  display: flex;
+}
+.modal-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 5px
+  
+}
+.modal-close:hover{
+  background: white;
+  color: red;
+  border-radius: 5px
+}
+.modal-body{
+  padding: 16px;
+}
+.modal-label{
+  display: block;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+.modal-input{
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 24px;
+}
+#buy-tickets{
+  background: #ED1B1B;
+  width: 100%;
+  font-size: 15px;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 18px;
+  border-radius: 5px
+}
+#buy-tickets:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
+@keyframes modalFaceIn{
+  from{
+      opacity: 0;
+      transform: translateY(-140px);
+  }
+  to{
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

@@ -145,8 +145,8 @@
               </div>
               <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
-                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
             </div>
@@ -187,100 +187,100 @@
     <!--/ about_area  -->
 
     <!-- youtube_video_area  -->
-    <div class="youtube_video_area">
-      <div class="container-fluid p-0">
-        <div class="row no-gutters">
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div class="single_video">
-              <div class="thumb">
-                <img src="img/video/1.png" alt="" />
-              </div>
-              <div class="hover_elements">
-                <div class="video">
-                  <a
-                    class="popup-video"
-                    href="https://www.youtube.com/embed/dQw4w9WgXcQ?si=R_tDdC-OVjiM5nbU"
-                  >
-                    <i class="fa fa-play"></i>
-                  </a>
-                </div>
+   <div class="youtube_video_area">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="single_video">
+                            <div class="thumb">
+                                <img style="height: 100%" src="img/MusicImg/Circle.jpg" alt="" />
+                            </div>
+                            <div class="hover_elements">
+                                <div class="video">
+                                    <a
+                                        class="popup-video"
+                                        href="https://www.youtube.com/watch?v=Z6d3BofQqN0"
+                                        >
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </div>
 
-                <div class="hover_inner">
-                  <span>New York Show-2018</span>
-                  <h3><a href="#">Shadows of My Dream</a></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div class="single_video">
-              <div class="thumb">
-                <img src="img/video/2.png" alt="" />
-              </div>
-              <div class="hover_elements">
-                <div class="video">
-                  <a
-                    class="popup-video"
-                    href="https://www.youtube.com/watch?v=Hzmp3z6deF8"
-                  >
-                    <i class="fa fa-play"></i>
-                  </a>
-                </div>
+                                <div class="hover_inner">
+                                    <span>Travis Scott</span>
+                                    <h3><a href="#">COFFE BEANS</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="single_video">
+                            <div class="thumb">
+                                <img style="height: 100%" src="img/MusicImg/Circle.jpg" alt="" />
+                            </div>
+                            <div class="hover_elements">
+                                <div class="video">
+                                    <a
+                                        class="popup-video"
+                                        href="https://www.youtube.com/watch?v=JQbjS0_ZfJ0"
+                                        >
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </div>
 
-                <div class="hover_inner">
-                  <span>New York Show-2018</span>
-                  <h3><a href="#">Shadows of My Dream</a></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div class="single_video">
-              <div class="thumb">
-                <img src="img/video/3.png" alt="" />
-              </div>
-              <div class="hover_elements">
-                <div class="video">
-                  <a
-                    class="popup-video"
-                    href="https://www.youtube.com/watch?v=Hzmp3z6deF8"
-                  >
-                    <i class="fa fa-play"></i>
-                  </a>
-                </div>
+                                <div class="hover_inner">
+                                    <span>SZA, Kendrick Lamar</span>
+                                    <h3><a href="https://www.youtube.com/watch?v=JQbjS0_ZfJ0">All The Star</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="single_video">
+                            <div class="thumb">
+                                <img style="height: 100%" src="img/MusicImg/Circle.jpg" alt="" />
+                            </div>
+                            <div class="hover_elements">
+                                <div class="video">
+                                    <a
+                                        class="popup-video"
+                                        href="https://www.youtube.com/watch?v=wXhTHyIgQ_U"
+                                        >
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </div>
 
-                <div class="hover_inner">
-                  <span>New York Show-2018</span>
-                  <h3><a href="#">Shadows of My Dream</a></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-3 col-md-6">
-            <div class="single_video">
-              <div class="thumb">
-                <img src="img/video/4.png" alt="" />
-              </div>
-              <div class="hover_elements">
-                <div class="video">
-                  <a
-                    class="popup-video"
-                    href="https://www.youtube.com/watch?v=Hzmp3z6deF8"
-                  >
-                    <i class="fa fa-play"></i>
-                  </a>
-                </div>
+                                <div class="hover_inner">
+                                    <span>Post Malone</span>
+                                    <h3><a href="https://www.youtube.com/watch?v=wXhTHyIgQ_U">Circles</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6">
+                        <div class="single_video">
+                            <div class="thumb">
+                                <img src="img/MusicImg/She Knows.png" alt="" />
+                            </div>
+                            <div class="hover_elements">
+                                <div class="video">
+                                    <a
+                                        class="popup-video"
+                                        href="https://www.youtube.com/watch?v=jYdaQJzcAcw"
+                                        >
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </div>
 
-                <div class="hover_inner">
-                  <span>New York Show-2018</span>
-                  <h3><a href="#">Shadows of My Dream</a></h3>
+                                <div class="hover_inner">
+                                    <span>J.Cole FT.Amber Coffman, Cults</span>
+                                    <h3><a href="#">She Knows</a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
     <!-- / youtube_video_area  -->
 
     <!-- music_area  -->
@@ -314,8 +314,8 @@
               </div>
               <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
-                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
             </div>
@@ -342,8 +342,8 @@
               </div>
               <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
-                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
             </div>
@@ -370,8 +370,8 @@
               </div>
               <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
-                                    <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                    <a href="#button" class="boxed-btn js-buy-tickets add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
             </div>
@@ -505,27 +505,27 @@
                 <div class="socail_links">
                   <ul>
                     <li>
-                      <a href="#">
+                      <a href="https://www.facebook.com/groups/1538600073595443">
                         <i class="fa fa-facebook"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://www.google.com.vn/">
                         <i class="fa fa-google-plus"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://twitter.com/i/flow/login">
                         <i class="fa fa-twitter"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://www.youtube.com/">
                         <i class="fa fa-youtube-play"></i>
                       </a>
                     </li>
                     <li>
-                      <a href="#">
+                      <a href="https://www.instagram.com/">
                         <i class="fa fa-instagram"></i>
                       </a>
                     </li>
@@ -570,7 +570,37 @@
     <!--/ footer end  -->
 
     <!-- link that opens popup -->
+     <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-bag"></i>
+                Music
+            </header>
+            <div class="modal-body">
+                <div class="modal-content">
+                    <img src="./img/ad.jpg" alt="">
+                    <a href="">nameSong:</a>
+                    <a href="">nghe si:</a>
+                    <a href="">Price = 300,000?</a>
+                </div>
+                <div class="modal-content" id="payment-button-container">
+                    <button id="buy-tickets">
+                        <a href="#" style="color: #fff;">Pay</a>
+                        <i class="ti-check"></i>
+                    </button>
+                </div>
+                <div class="modal-content" id="success-message" style="display: none;color: green;font-size: larger;">
+                    Payment successful!
+                </div>
+            </div>
 
+        </div>
+    </div>
+    
+    
     <!-- JS here -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -611,5 +641,60 @@
         $("audio").audioPlayer({});
       });
     </script>
+    
+      <script>
+        const buyBtns = document.querySelectorAll('.js-buy-tickets');
+        const modal = document.querySelector('.modal');
+        const modalClose = document.querySelector('.js-modal-close');
+        const modalContainer = document.querySelector('.js-modal-container');
+
+        function showBuyTicket() {
+            modal.classList.add('open');
+        }
+
+        function hideBuyTicket() {
+            modal.classList.remove('open');
+        }
+
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTicket);
+        }
+
+        modalClose.addEventListener('click', hideBuyTicket);
+
+        modal.addEventListener('click', hideBuyTicket);
+
+        modalContainer.addEventListener('click', function (event) {
+            event.stopPropagation();
+        });
+
+
+
+    </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var payButton = document.getElementById("buy-tickets");
+        payButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            payButton.style.display = "none";
+            var successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
+        });
+
+        var modalCloseButton = document.querySelector(".js-modal-close");
+        modalCloseButton.addEventListener("click", function () {
+            resetModal();
+        });
+
+        function resetModal() {
+            var payButton = document.getElementById("buy-tickets");
+            payButton.style.display = "block";
+            var successMessage = document.getElementById("success-message");
+            successMessage.style.display = "none";
+        }
+    });
+</script>
+
   </body>
 </html>
