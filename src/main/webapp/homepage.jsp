@@ -348,32 +348,17 @@
                     </div>
                 </div>
                 <div class="row align-items-center justify-content-center mb-20">
-                    <div class="col-xl-10">
-                        <div class="row align-items-center">
-                            <div class="col-xl-9 col-md-9">
-                                <div class="music_field">
-                                    <div class="thumb">
-                                        <img src="img/music_man/3.png" alt="" />
-                                    </div>
-                                    <div class="audio_name">
-                                        <div class="name">
-                                            <h4>Frando Kally</h4>
-                                            <p>10 November, 2019</p>
-                                        </div>
-                                        <audio preload="auto" controls>
-                                            <source src="https://www.w3schools.com/html/horse.mp3" />
-                                        </audio>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-3 btn-addShopCart-music">
+                   <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1i9lZvlaDdWDPyXEE95aiq?utm_source=generator" 
+                           width="50%" height="152" frameBorder="0" allowfullscreen="" 
+                           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+                               
+                   </iframe>
+                                                <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                 <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
                                     <a href="#" class="boxed-btn buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
                                     <a href="#" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
