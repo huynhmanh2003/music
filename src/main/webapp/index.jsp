@@ -1,6 +1,7 @@
 <%@page import="Model.Music"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="DAO.MusicDAO"%>
+<%@page import="Filter.LoginCheck"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html class="no-js" lang="en" style="scroll-behavior: smooth;">
@@ -64,7 +65,7 @@
                                                 <li><a class="active" href="index.jsp">home</a></li>
                                                 <li><a href="about.html">About</a></li>
                                                 <li><a href="track.html">tracks</a></li>
-                                                
+
                                                 <li><a href="#contact">Contact</a></li>
                                             </ul>
                                         </nav>
@@ -308,7 +309,22 @@
                                 </div>
                                 <div class="col-xl-3 col-md-3 btn-addShopCart-music">
                                     <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                        <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
+                                        <%
+                                            if (session.getAttribute("usersession") == null) {
+                                        %>
+                                        <a href="LoginHome.jsp" class="boxed-btn js-buy-tickets buy-album-btn">Buy Album</a>
+                                        <%
+                                        } else {
+                                        %>
+                                        <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" 
+                                            data-music-song="${music.getMusicName()}"
+                                            data-music-artist="${music.getArtist()}"
+                                            data-music-price="${music.getPrice()}"
+                                            style=" margin-right: 10px;border-radius: 5px;"
+                                            >Buy Album</a>
+                                        
+                                        <%}%>
+
                                         <form action="Buy" method="post">
                                             <input type="hidden" name="musicID" value="${music.getMusicID()}">
                                             <input type="submit" class="boxed-btn  add-to-cart-btn"style=" margin-left: 10px;border-radius: 5px;" name="name" value="add to cart">
@@ -487,7 +503,7 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
                                 <script>
-                                    document.write(new Date().getFullYear());                                </script>
+                                    document.write(new Date().getFullYear());</script>
                                 All rights reserved | This Web is made with
                                 <i class="fa fa-heart-o" aria-hidden="true"></i> by
                                 <a href="https://www.facebook.com/quydn2003" target="_blank">NguyenDangQuy</a>
@@ -523,9 +539,9 @@
                 <div class="modal-body">
                     <div class="modal-content">
                         <img src="./img/Music.png" alt="">
-                        <a href="">nameSong:</a>
-                        <a href="">nghe si:</a>
-                        <a href="">Price = 300.000d</a>
+                        <span id="modal-nameSong"></span>
+                        <span id="modal-artist"></span>
+                        <span id="modal-price"></span>  
                     </div>
                     <div class="modal-content" id="payment-button-container">
                         <label for="ticket-email" class="modal-label">
@@ -593,12 +609,22 @@
 
         <script>
             const buyBtns = document.querySelectorAll('.js-buy-tickets');
-            const modal = document.querySelector('.modal')
-            const modalClose = document.querySelector('.js-modal-close')
-            const modalContainer = document.querySelector('.js-modal-container')
+            const modal = document.querySelector('.modal');
+            const modalClose = document.querySelector('.js-modal-close');
+            const modalContainer = document.querySelector('.js-modal-container');
+            const modalSongName = document.querySelector('#modal-nameSong');
+            const modalArtist = document.querySelector('#modal-artist');
+            const modalPrice = document.querySelector('#modal-price');
+
 
             function showBuyTicket() {
-                modal.classList.add('open')
+                const musicame = this.getAttribute('data-music-song');
+                const musicartist = this.getAttribute('data-music-artist');
+                const musicprice = this.getAttribute('data-music-price');
+                modalSongName.innerHTML = 'Sone Name: ' + musicame;
+                modalArtist.innerHTML = 'Artist: ' + musicartist;
+                modalPrice.innerHTML = 'Price ' + musicprice;
+                modal.classList.add('open');
             }
 
             function hideBuyTicket() {
