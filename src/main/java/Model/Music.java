@@ -71,7 +71,7 @@ public class Music {
         return linkToSong;
     }
 
-    public void setLinkToSong(String linkToSong) {
+    public void setLinkToSong(String linkToSong) {                      
         this.linkToSong = linkToSong;
     }
 

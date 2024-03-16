@@ -146,6 +146,17 @@ public class MusicDAO {
             }
         }
     }
+    public Music searchbyID(String musicId){
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ConnectDatabase db = new ConnectDatabase();
+        MusicDAO m1 = new MusicDAO();
+        for(Music test : m1.getMusic()){
+            if(test.getMusicID()==Integer.parseInt(musicId))
+                return test;
+        }
+        return null;
+    }
     public static void main(String[] args) {
         MusicDAO m1 = new MusicDAO();
         System.out.println(m1.getMusic());

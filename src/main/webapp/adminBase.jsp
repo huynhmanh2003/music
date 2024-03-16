@@ -4,6 +4,10 @@
     Author     : MSIGAMING
 --%>
 
+<%@page import="java.io.PrintWriter"%>
+<%@page import="Model.Music"%>
+<%@page import="DAO.MusicDAO"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -15,17 +19,36 @@
     <body>
         <%
             // Lấy danh sách các cookie từ yêu cầu
-            String favLang = "N/A";
-            Cookie[] theCookies = request.getCookies();
-            if (theCookies != null) {
-                for (Cookie tempCookie : theCookies) {
-                    if (tempCookie.getName().equals("musicID")) {
-                        favLang = tempCookie.getValue();
-                        break;
-                    }
-                }
-            }
+
         %>
-        <h4> We read the information like <%= favLang%>                                                                                                                                                                                                                                 
-    </body>
-</html>
+        <h4> We read the information like <%= favLang%>   
+            <div class="cart-item">
+                <table border="2">
+                    <thead>
+                        <tr>
+                            <th>Music's Name</th>
+                            <th>Music's Artist</th>
+                            <th>Music's Price</th>
+                        </tr>
+                    </thead>
+                    <c:forEach var="music" items="${arrMusic}">
+
+                        <tbody>
+                            <tr>
+                                <td>${music.getMusicName()}</td>
+                                <td>${music.getArtist()}</td>
+                                <td>${music.getPrice()}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>   
+                        </c:forEach>
+                    </table>                                        
+                <a href="index.jsp">back</a>                   
+
+                </div>
+        </body>
+    </html>
