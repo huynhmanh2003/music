@@ -57,43 +57,44 @@
                                         </div>
                                         <p class="text-center text-muted mt-5 mb-0" style="color: #FFF">Have already an account? <a href="./LoginHome.jsp" class="fw-bold text-body"style="color: #FFF"><u style="color: #FFF">Login here</u></a></p>
                                     </form>
-<script>
-    function validateForm1(event) {
-        var fname = document.getElementById("formFName").value;
-        var lname = document.getElementById("formLname").value;
-        var username = document.getElementById("formName").value; // Sửa ID ở đây
-        var password = document.getElementById("formPassword").value; // Sửa ID ở đây
-        var errorMessage1 = document.getElementById("error-message1");
-        var errorMessage2 = document.getElementById("error-message2");
-        var errorMessage3 = document.getElementById("error-message3");
-        var errorMessage4 = document.getElementById("error-message4");
 
-        // Xóa thông báo lỗi trước mỗi lần kiểm tra
-        errorMessage1.innerHTML = '';
-        errorMessage2.innerHTML = '';
-        errorMessage3.innerHTML = '';
-        errorMessage4.innerHTML = '';
+                                    <script>
+                                        function validateForm1(event) {
+                                            var fname = document.getElementById("formFName").value;
+                                            var lname = document.getElementById("formLname").value;
+                                            var username = document.getElementById("formName").value; // Sửa ID ở đây
+                                            var password = document.getElementById("formPassword").value; // Sửa ID ở đây
+                                            var errorMessage1 = document.getElementById("error-message1");
+                                            var errorMessage2 = document.getElementById("error-message2");
+                                            var errorMessage3 = document.getElementById("error-message3");
+                                            var errorMessage4 = document.getElementById("error-message4");
 
-        if (fname.trim() === '') {
-            errorMessage1.innerHTML = "Cannot Be Null";
-        }
-        if (lname.trim() === '') {
-            errorMessage2.innerHTML = "Cannot Be Null";
-        }
-        if (username.trim() === '') {
-            errorMessage3.innerHTML = "Cannot Be Null";
-        }
-        if (password.trim() === '') {
-            errorMessage4.innerHTML = "Cannot Be Null";
-        }
+                                            // Xóa thông báo lỗi trước mỗi lần kiểm tra
+                                            errorMessage1.innerHTML = '';
+                                            errorMessage2.innerHTML = '';
+                                            errorMessage3.innerHTML = '';
+                                            errorMessage4.innerHTML = '';
 
-        if (username.trim() === '' || password.trim() === '' || fname.trim() === '' || lname.trim() === '') {
-            event.preventDefault(); // Ngăn chặn việc submit form
-            return false;
-        }
-        return true; // Cho phép submit form
-    }
-</script>
+                                            if (fname.trim() === '') {
+                                                errorMessage1.innerHTML = "Cannot Be Null";
+                                            }
+                                            if (lname.trim() === '') {
+                                                errorMessage2.innerHTML = "Cannot Be Null";
+                                            }
+                                            if (username.trim() === '') {
+                                                errorMessage3.innerHTML = "Cannot Be Null";
+                                            }
+                                            if (password.trim() === '') {
+                                                errorMessage4.innerHTML = "Cannot Be Null";
+                                            }
+
+                                            if (username.trim() === '' || password.trim() === '' || fname.trim() === '' || lname.trim() === '') {
+                                                event.preventDefault(); // Ngăn chặn việc submit form
+                                                return false;
+                                            }
+                                            return true; // Cho phép submit form
+                                        }
+                                    </script>
                                 </div>
                             </div>
                         </div>

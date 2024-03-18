@@ -32,11 +32,14 @@ public class Buy extends HttpServlet {
         @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            Cookie cookie = new Cookie("musicID", request.getParameter("musicID"));
+            String musicId = request.getParameter("musicID");
+            String preCookies = CartProvider.getOldCart(request.getCookies());
+            String newcookes = CartProvider.getNewCart(preCookies, musicId);
             // Đặt thời gian sống của cookie là 24 giờ (tính bằng giây)
+            Cookie cookie = new Cookie("cookies", newcookes);
             cookie.setMaxAge(24 * 60 * 60);
             response.addCookie(cookie);
-            request.getRequestDispatcher("cartInfo.jsp").forward(request, response); 
+            response.sendRedirect("index.jsp"); 
     }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

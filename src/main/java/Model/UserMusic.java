@@ -9,33 +9,10 @@ package Model;
  * @author Hi
  */
 public class UserMusic {
+
     private int UserID, MusicID;
-    private String linkToImage;
-    private String linkToSong;
+
     public UserMusic() {
-    }
-
-    public UserMusic(int UserID, int MusicID,String linkToImage,String linkToSong) {
-        this.UserID = UserID;
-        this.MusicID = MusicID;
-        this.linkToImage=linkToImage;
-        this.linkToSong=linkToSong;
-    }
-
-    public String getLinkToImage() {
-        return linkToImage;
-    }
-
-    public void setLinkToImage(String linkToImage) {
-        this.linkToImage = linkToImage;
-    }
-
-    public String getLinkToSong() {
-        return linkToSong;
-    }
-
-    public void setLinkToSong(String linkToSong) {
-        this.linkToSong = linkToSong;
     }
 
     public int getUserID() {
@@ -54,12 +31,14 @@ public class UserMusic {
         this.MusicID = MusicID;
     }
 
-    @Override
-    public String toString() {
-        return "UserMusic{" + "UserID=" + UserID + ", MusicID=" + MusicID + ", linkToImage=" + linkToImage + ", linkToSong=" + linkToSong + '}';
+    public UserMusic(int UserID, int MusicID) {
+        this.UserID = UserID;
+        this.MusicID = MusicID;
     }
 
+    @Override
+    public String toString() {
+        return "UserMusic{" + "UserID=" + UserID + ", MusicID=" + MusicID + '}';
+    }
 
-    
-    
 }
