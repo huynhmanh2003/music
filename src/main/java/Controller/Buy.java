@@ -39,7 +39,7 @@ public class Buy extends HttpServlet {
             Cookie cookie = new Cookie("cookies", newcookes);
             cookie.setMaxAge(24 * 60 * 60);
             response.addCookie(cookie);
-            response.sendRedirect("index.jsp"); 
+            response.sendRedirect("/music/#here"); 
     }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
