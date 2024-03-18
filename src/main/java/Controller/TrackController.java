@@ -5,39 +5,25 @@
 package Controller;
 
 import DAO.UserDao;
-import Model.User;
+import DAO.UserMusicDao;
+import Model.UserMusic;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Manh
  */
-@WebServlet(name = "Register", urlPatterns = {"/Register"})
-public class Register extends HttpServlet {
+@WebServlet(name = "TrackController", urlPatterns = {"/TrackController"})
+public class TrackController extends HttpServlet {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String userfname = request.getParameter("userFirstName");
-        String userlname = request.getParameter("userLastName");
-        String username = request.getParameter("userName");
-        String userpassword = request.getParameter("userPassword");
-        // Hồi làm phần phân quyền ở đây
-        User a1 = new User(0, username, userpassword, userfname, userlname, "Guess");
-        UserDao d1 = new UserDao();
-        if(d1.check(a1)){
-            d1.addUser(a1);
-            request.getRequestDispatcher("Welcome.jsp").forward(request, response);
-        }else{
-            request.setAttribute("Sign2", "false");
-            request.getRequestDispatcher("RegisterHome.jsp").forward(request, response);
-        }
-    }
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -47,6 +33,32 @@ public class Register extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("usersession");
+        String pass = request.getParameter("userpassword");
+        String test = (String) request.getSession().getAttribute("passwordsession");
+        String musicIDs = (request.getParameter("items"));
+        String[] listmusic = musicIDs.split("-");
+        if (pass.equals(test)) {
+            if (musicIDs != null) {
+                for (String idm : listmusic) {
+                    UserMusicDao.addUserMusic(new UserMusic(UserDao.findID(username), Integer.parseInt(idm)));
+                }
+            }
+            PrintWriter out = response.getWriter();
+            out.print(UserMusicDao.getUserMusic());
+            Cookie cookie = new Cookie("cookies", "");
+            cookie.setMaxAge(24 * 60 * 60);
+            response.addCookie(cookie);
+            response.sendRedirect("index.jsp");
+        } else {
+            request.getRequestDispatcher("CartPage.jsp");
+        }
+    }
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -55,10 +67,10 @@ public class Register extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Register</title>");            
+            out.println("<title>Servlet TrackController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Register at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet TrackController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -87,8 +99,6 @@ public class Register extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
-
     /**
      * Returns a short description of the servlet.
      *

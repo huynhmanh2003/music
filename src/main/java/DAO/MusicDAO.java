@@ -146,7 +146,7 @@ public class MusicDAO {
             }
         }
     }
-    public Music searchbyID(String musicId){
+    public static Music searchbyID(String musicId){
         Connection con = null;
         PreparedStatement stmt = null;
         ConnectDatabase db = new ConnectDatabase();

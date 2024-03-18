@@ -75,14 +75,34 @@
                                     <div class="Login-SignIn text-right">
                                         <ul class="Login-SignIn connection-page">
                                             <%
+                                                String size = "";
+                                                Cookie cookies[] = request.getCookies();
+                                                if (cookies != null) {
+                                                    for (Cookie cookie : cookies) {
+                                                        if (cookie.getName().equals("cookies")) {
+                                                            String cookieValue = cookie.getValue();
+                                                            if (!cookieValue.equals("")) {
+                                                                String[] musicIDs = cookieValue.split("-");
+                                                                size = "" + musicIDs.length;
+                                                            }else
+                                                                size="0";
+                                                        }
+                                                    }
+                                                }
                                                 if (session.getAttribute("usersession") == null || session.getAttribute("passwordsession") == null) {%>
                                             <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
                                             <li><a href="./RegisterHome.jsp" class="Signin-Button">Register</a></li>
                                                 <%} else {%>
                                             <li><span >Welcome:  ${usersession} </span></li>
-                                            <li><a href="./signOut" class="Signin-Button">Sign Out</a></li>
-                                                <%}
-                                                %>
+                                            <li><a href="CartPage.jsp" class="Signin-Button">
+                                                    <img style="width: 30px; height: 30px;" src="img/empty-cart.png" alt="alt"/>
+                                                    <span style="color: white">Cart Items(<%=size%>)</span>
+                                                </a>
+                                            </li>
+                                            <li><a href="./signOut" class="Signin-Button"> Sign Out</a></li>
+
+                                            <%}
+                                            %>
 
                                         </ul>
                                     </div>
@@ -134,12 +154,6 @@
                                             <source src="Musicsource/god.mp3" />
                                         </audio>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-3 btn-addShopCart-music">
-                                <div class="music_btn" style="display:flex;justify-content: space-between;white-space: nowrap">
-                                    <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" style=" margin-right: 10px;border-radius: 5px;" >buy album</a>
-                                    <a href="#button" class="boxed-btn add-to-cart-btn" style=" margin-left: 10px;border-radius: 5px;" >add to cart</a>
                                 </div>
                             </div>
                         </div>
@@ -317,17 +331,18 @@
                                         } else {
                                         %>
                                         <a href="#button" class="boxed-btn js-buy-tickets buy-album-btn" 
-                                            data-music-song="${music.getMusicName()}"
-                                            data-music-artist="${music.getArtist()}"
-                                            data-music-price="${music.getPrice()}"
-                                            style=" margin-right: 10px;border-radius: 5px;"
-                                            >Buy Album</a>
-                                        
+                                           data-music-song="${music.getMusicName()}"
+                                           data-music-artist="${music.getArtist()}"
+                                           data-music-price="${music.getPrice()}"
+                                           data-music-pass="${session.getAttribute("passwordsession")}";
+                                           style=" margin-right: 10px;border-radius: 5px;"
+                                           >Buy Album</a>
+
                                         <%}%>
 
                                         <form action="Buy" method="post">
                                             <input type="hidden" name="musicID" value="${music.getMusicID()}">
-                                            <input type="submit" class="boxed-btn  add-to-cart-btn"style=" margin-left: 10px;border-radius: 5px;" name="name" value="add to cart">
+                                            <input  type="submit" class="boxed-btn  add-to-cart-btn"style=" margin-left: 10px;border-radius: 5px;" name="name" value="add to cart">
                                         </form>
                                     </div>
                                 </div>
@@ -548,7 +563,10 @@
                             <i class="ti-key"></i>
                             YourPassword
                         </label>
-                        <input id="ticket-email" type="text" class="modal-input" placeholder="Enter YourPassword...">
+                        <%
+                            String pass = (String) session.getAttribute("passwordsession");
+                        %>
+                        <input data-music-pass1 ="<%=pass%>" id="ticket-email" type="password" class="modal-input" placeholder="Enter YourPassword...">
 
                         <button id="buy-tickets">
                             <a href="#" style="color: #fff;">Pay</a>
@@ -621,6 +639,7 @@
                 const musicame = this.getAttribute('data-music-song');
                 const musicartist = this.getAttribute('data-music-artist');
                 const musicprice = this.getAttribute('data-music-price');
+
                 modalSongName.innerHTML = 'Sone Name: ' + musicame;
                 modalArtist.innerHTML = 'Artist: ' + musicartist;
                 modalPrice.innerHTML = 'Price ' + musicprice;
@@ -652,15 +671,19 @@
                 var payButton = document.getElementById("buy-tickets");
                 payButton.addEventListener("click", function (event) {
                     event.preventDefault();
-                    payButton.style.display = "none";
-                    var successMessage = document.getElementById("success-message");
-                    successMessage.style.display = "block";
 
-                    // ?n ?i ph?n nh?p m?t kh?u
                     var passwordField = document.getElementById("ticket-email");
-                    passwordField.style.display = "none";
-                    var passwordLabel = document.querySelector("label[for=ticket-email]");
-                    passwordLabel.style.display = "none";
+                    var musicpass = passwordField.getAttribute('data-music-pass1');
+
+                    var successMessage = document.getElementById("success-message");
+
+                    // Ki?m tra m?t kh?u
+                    if (passwordField.value !== musicpass) {
+                        alert("Incorrect Password");
+                    } else {
+                        payButton.style.display = "none";
+                        successMessage.style.display = "block";
+                    }
                 });
 
                 var modalCloseButton = document.querySelector(".js-modal-close");
@@ -674,13 +697,7 @@
                     var successMessage = document.getElementById("success-message");
                     successMessage.style.display = "none";
 
-                    // Hi?n th? l?i ph?n nh?p m?t kh?u
                     var passwordField = document.getElementById("ticket-email");
-                    passwordField.style.display = "block";
-                    var passwordLabel = document.querySelector("label[for=ticket-email]");
-                    passwordLabel.style.display = "block";
-
-                    // Xóa d? li?u ?ã nh?p trong ô m?t kh?u
                     passwordField.value = "";
                 }
             });
