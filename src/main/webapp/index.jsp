@@ -31,7 +31,7 @@
         <link rel="stylesheet" href="./css/slicknav.css" />
         <link rel="stylesheet" href="./css/style.css" />
         <link rel="stylesheet" href="./css/themify-icons.css" />
-
+        <link rel="stylesheet" href="./css/styleshit.css"/>
         <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     </head>
 
@@ -64,7 +64,7 @@
                                             <ul id="navigation">
                                                 <li><a class="active" href="index.jsp">home</a></li>
                                                 <li><a href="about.html">About</a></li>
-                                                <li><a href="track.html">tracks</a></li>
+                                                <li><a href="track.jsp">tracks</a></li>
 
                                                 <li><a href="#contact">Contact</a></li>
                                             </ul>
@@ -84,8 +84,9 @@
                                                             if (!cookieValue.equals("")) {
                                                                 String[] musicIDs = cookieValue.split("-");
                                                                 size = "" + musicIDs.length;
-                                                            }else
-                                                                size="0";
+                                                            } else {
+                                                                size = "0";
+                                                            }
                                                         }
                                                     }
                                                 }
@@ -93,18 +94,20 @@
                                             <li><a href="./LoginHome.jsp" class="Login-Button">Login</a></li>
                                             <li><a href="./RegisterHome.jsp" class="Signin-Button">Register</a></li>
                                                 <%} else {%>
-                                            <li><span >Welcome:  ${usersession} </span></li>
-                                            <li><a href="CartPage.jsp" class="Signin-Button">
-                                                    <img style="width: 30px; height: 30px;" src="img/empty-cart.png" alt="alt"/>
-                                                    <span style="color: white">Cart Items(<%=size%>)</span>
-                                                </a>
-                                            </li>
-                                            <li><a href="./signOut" class="Signin-Button"> Sign Out</a></li>
-
-                                            <%}
-                                            %>
-
                                         </ul>
+                                        <div class="nav-bar" style="display: flex;
+                                                    justify-content: space-between;
+                                                    align-items: center" >
+                                            <span style="color: white" >Welcome:  ${usersession} </span>
+                                            <a href="CartPage.jsp" class="Signin-Button">
+                                                <img style="width: 30px; height: 30px;" src="img/empty-cart.png" alt="alt"/>
+                                                <span style="color: white">(<%=size%>)</span>
+                                            </a>
+
+                                            <a href="./signOut" class="Signin-Button" style="color: white"> Sign Out</a>
+                                        </div>
+                                        <%}
+                                        %>
                                     </div>
                                 </div>
                                 <div class="col-12">

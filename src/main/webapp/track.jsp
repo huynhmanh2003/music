@@ -101,26 +101,7 @@
     <div class="slider_area">
         <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
             <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="slider_text text-center ">
-                            <h3>Musician </h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-
-    <!-- music_area  -->
-
-    <!-- music_area end  -->
-
-
-
-    <!-- music_area  -->
-    <div class="music_area music_gallery">
+                <div class="music_area music_gallery">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -149,144 +130,14 @@
                     </div>
                 </div>
                 <!-- /Cột 1 -->
-            
-                <!-- Cột 2 -->
-                <div class="col-xl-6">
-                    <div class="music_field" id="music_field2">
-                        <a href="#" class="music_link">
-                            <div class="thumb">
-                                <img src="img/music_man/2.png" alt="">
-                            </div>
-                            <div class="audio_name">
-                                <div class="name">
-                                    <h4>Frando Kally</h4>
-                                    <p>10 November, 2019</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- /Cột 2 -->
+               
             </div>
         </div>
     </div>
-    <!-- music_area end  -->
-    <!-- contact_rsvp -->
-    <div class="contact_rsvp">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="text text-center">
-                        <h3>Contact For RSVP</h3>
-                        <a class="boxed-btn3" href="contact.html">Contact Me</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-    <!--/ contact_rsvp -->
-
-    <!-- footer start -->
-    <footer class="footer">
-        <div class="footer_top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-md-6">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Services
-                            </h3>
-                            <div class="subscribe-from">
-                                <form action="#">
-                                    <input type="text" placeholder="Enter your mail">
-                                    <button type="submit">Subscribe</button>
-                                </form>
-                            </div>
-                            <p class="sub_text">Esteem spirit temper too say adieus who direct esteem esteems luckily.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-md-5 offset-xl-1">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Contact Me
-                            </h3>
-                            <ul>
-                                <li><a href="#">conbusi@support.com
-                                    </a></li>
-                                <li><a href="#">+10 873 672 6782
-                                    </a></li>
-                                <li><a href="#">600/D, Green road, Kings Garden NewYork-6732</a></li>
-                            </ul>
-                            <div class="socail_links">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <i class=" fa fa-facebook "></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-youtube-play"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="footer_border"></div>
-                <div class="row">
-                    <div class="col-xl-7 col-md-6">
-                        <p class="copy_right">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a
-                                href="https://colorlib.com" target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
-                    </div>
-                    <div class="col-xl-5 col-md-6">
-                        <div class="footer_links">
-                            <ul>
-                                <li><a href="#">home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">tracks</a></li>
-                                <li><a href="#">blog</a></li>
-                                <li><a href="#">contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/ footer end  -->
-
-
-
-    <!--/ app play music start  -->
+  <!--/ app play music start  -->
     <div id="app-cover" class="hidden" >
         <div id="player">
             <div id="player-track">
