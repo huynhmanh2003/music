@@ -6,7 +6,7 @@
     </filter>
     <filter-mapping>
         <filter-name>LoginCheck</filter-name>
-        <url-pattern>/music/</url-pattern>
+        <url-pattern>/music/*</url-pattern>
     </filter-mapping>
 
     
