@@ -4,20 +4,27 @@
  */
 package Controller;
 
+import DAO.MusicDAO;
+import DAO.UserDao;
+import DAO.UserMusicDao;
+import Model.Music;
+import Model.UserMusic;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Manh
  */
-@WebServlet(name = "UserMusic", urlPatterns = {"/UserMusic"})
-public class UserMusic extends HttpServlet {
+@WebServlet(name = "UserMusicController", urlPatterns = {"/UserMusicController"})
+public class UserMusicController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -57,7 +64,15 @@ public class UserMusic extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+      
+        HttpSession session = request.getSession();
+        if(session!=null&&session.getAttribute("usersession")!=null)
+            request.getRequestDispatcher("track.jsp").forward(request, response);
+        else{
+            response.sendRedirect("LoginHome.jsp");
+        }
+        
+//        request.getRequestDispatcher("track.jsp").forward(request, response);
     }
 
     /**

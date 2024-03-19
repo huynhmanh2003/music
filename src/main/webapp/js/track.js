@@ -5,6 +5,7 @@
 
 $(function () {
     var playerTrack = $("#player-track"),
+      appCover = document.getElementById("app-cover"),
       bgArtwork = $("#bg-artwork"),
       bgArtworkUrl,
       albumName = $("#album-name"),
@@ -50,16 +51,14 @@ $(function () {
         "Martin Garrix - Proxy"
       ],
       albumArtworks = ["_1", "_2", "_3", "_4", "_5"],
-      trackUrl = [
-        "./Musicsource/All The Stars.mp3",
-        "./Musicsource/All The Stars.mp3",
-        "./Musicsource/All The Stars.mp3",
-        "./Musicsource/All The Stars.mp3",
-        "./Musicsource/All The Stars.mp3"
-      ],
+      trackUrl = [],
+      userMusicData = JSON.parse(appCover.getAttribute("data-user-music")),
       playPreviousTrackButton = $("#play-previous"),
       playNextTrackButton = $("#play-next"),
       currIndex = -1;
+      userMusicData.forEach(function(music) {
+        trackUrl.push(music.getLinkToSong());
+    });
   //kết thúc array của nhạc
     function playPause() {
       setTimeout(function () {
