@@ -146,19 +146,19 @@
                   </div>
             </c:forEach> 
             <% if (totalPages > 1) { %>
-            <div class="pagination" >
+            <div class="pagination" style="display: flex;justify-content: space-around;padding-top: 30px;"  >
                 <%-- Liên kết đến trang trước (nếu có) --%>
                 <% if (currentPage > 1) {%>
-                <a style="color: white" href="?page=<%= currentPage - 1%>">Previous</a>       <% } %>
+                <a style="color: white;    font-size: x-large;" href="?page=<%= currentPage - 1%>">Previous</a>       <% } %>
 
                 <%-- Hiển thị các liên kết đến các trang --%>
                 <% for (int i = 1; i <= totalPages; i++) {%>
-                <a style="color: white" href="?page=<%= i%>" <%= (i == currentPage) ? "class=\"active\"" : ""%>><%= i%></a>
+                <a style="color: white;    font-size: x-large;" href="?page=<%= i%>" <%= (i == currentPage) ? "class=\"active\"" : ""%>><%= i%></a>
                 <% } %>
 
                 <%-- Liên kết đến trang tiếp theo (nếu có) --%>
                 <% if (currentPage < totalPages) {%>
-                <a style="color: white" href="?page=<%= currentPage + 1%>">Next</a>
+                <a style="color: white;    font-size: x-large;" href="?page=<%= currentPage + 1%>">Next</a>
                 <% } %>
             </div>
             <% }%>
