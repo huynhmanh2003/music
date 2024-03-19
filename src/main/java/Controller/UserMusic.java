@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Manh
  */
-@WebServlet(name = "Buy", urlPatterns = {"/Buy"})
-public class Buy extends HttpServlet {
+@WebServlet(name = "UserMusic", urlPatterns = {"/UserMusic"})
+public class UserMusic extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,23 +28,6 @@ public class Buy extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-        @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        if(request.getSession().getAttribute("usersession")!=null){
-            String musicId = request.getParameter("musicID");
-            String preCookies = CartProvider.getOldCart(request.getCookies());
-            String newcookes = CartProvider.getNewCart(preCookies, musicId);
-            // Đặt thời gian sống của cookie là 24 giờ (tính bằng giây)
-            Cookie cookie = new Cookie("cookies", newcookes);
-            cookie.setMaxAge(24 * 60 * 60);
-            response.addCookie(cookie);
-            response.sendRedirect("/music/#here"); 
-        }
-        else{
-            response.sendRedirect("/music/LoginHome.jsp");
-        }
-    }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -54,10 +36,10 @@ public class Buy extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Buy</title>");            
+            out.println("<title>Servlet UserMusic</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Buy at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet UserMusic at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -86,7 +68,11 @@ public class Buy extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
 
     /**
      * Returns a short description of the servlet.
