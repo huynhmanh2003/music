@@ -12,7 +12,7 @@
         <title>JSP Page</title>
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body >
         <h1>Hello World!</h1>
         <div id="wrapper">
             <div id="header">

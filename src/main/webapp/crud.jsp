@@ -25,7 +25,7 @@
     </style>
     <body
         style="
-        height: 900px;
+        height: auto;
         background-image: url(img/banner/contact.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -78,7 +78,12 @@
             </table>
 
         </div>
-        <a href="addNewSong.jsp">Add New Song</a>
+                    <a href="addNewSong.jsp" style="font-size: x-large;
+                                                    display: flex;
+                                                    justify-content: center;
+                                                    text-decoration: none;
+                                                    color: red;border: solid;
+                                                    background-color: aliceblue;" >Add New Song</a>
     </body>
 </html>
 
