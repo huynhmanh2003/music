@@ -1,3 +1,4 @@
+<%@page import="DAO.UserDao"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.Music"%>
 <%@page import="java.util.ArrayList"%>
@@ -65,7 +66,15 @@
                                             <ul id="navigation">
                                                 <li><a class="active" href="index.jsp">home</a></li>
                                                 <li><a href="UserMusicController">tracks</a></li>
-
+                                                    <%
+                                                        if (request.getSession() != null && session.getAttribute("usersession") != null) {
+                                                            if (UserDao.findrole(session.getAttribute("usersession").toString()).equals("Admin")) {
+                                                    %>
+                                                <li><a href="crud.jsp">Control</a></li>
+                                                    <%
+                                                        }
+                                                        }
+                                                    %>
                                                 <li><a href="#contact">Contact</a></li>
                                             </ul>
                                         </nav>
@@ -96,8 +105,8 @@
                                                 <%} else {%>
                                         </ul>
                                         <div class="nav-bar" style="display: flex;
-                                                    justify-content: space-between;
-                                                    align-items: center" >
+                                             justify-content: space-between;
+                                             align-items: center" >
                                             <span style="color: white" >Welcome:  ${usersession} </span>
                                             <a href="CartPage.jsp" class="Signin-Button">
                                                 <img style="width: 30px; height: 30px;" src="img/empty-cart.png" alt="alt"/>
@@ -303,16 +312,16 @@
                 <%
                     MusicDAO m1 = new MusicDAO();
                     ArrayList<Music> arr = m1.getMusic();
-                      int itemsPerPage = arr.size();
-                      int attributesPerPage = 3;
-                      int totalPages = (int) Math.ceil((double) itemsPerPage / attributesPerPage);
-                      int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
-                      int startIndex = (currentPage - 1) * attributesPerPage;
-                      int endIndex = Math.min(startIndex + attributesPerPage, itemsPerPage);
-                      List<Music> currentItems = arr.subList(startIndex, endIndex);
+                    int itemsPerPage = arr.size();
+                    int attributesPerPage = 3;
+                    int totalPages = (int) Math.ceil((double) itemsPerPage / attributesPerPage);
+                    int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
+                    int startIndex = (currentPage - 1) * attributesPerPage;
+                    int endIndex = Math.min(startIndex + attributesPerPage, itemsPerPage);
+                    List<Music> currentItems = arr.subList(startIndex, endIndex);
                 %>
-                
-                <c:forEach var = "music" items="<%=currentItems %>">
+
+                <c:forEach var = "music" items="<%=currentItems%>">
                     <div class="row align-items-center justify-content-center mb-20">
                         <div class="col-xl-10">
                             <div class="row align-items-center">
@@ -361,23 +370,23 @@
                         </div>
                     </div>
                 </c:forEach> 
-                            <% if (totalPages > 1) { %>
-            <div class="pagination" style="display: flex;justify-content: space-around;padding-top: 30px;" >
-                <%-- Liên k?t ??n trang tr??c (n?u có) --%>
-                <% if (currentPage > 1) {%>
-                <a style="color: black;    font-size: x-large;" href="?page=<%= currentPage - 1%>">Previous</a>       <% } %>
+                <% if (totalPages > 1) { %>
+                <div class="pagination" style="display: flex;justify-content: space-around;padding-top: 30px;" >
+                    <%-- Liên k?t ??n trang tr??c (n?u có) --%>
+                    <% if (currentPage > 1) {%>
+                    <a style="color: black;    font-size: x-large;" href="?page=<%= currentPage - 1%>">Previous</a>       <% } %>
 
-                <%-- Hi?n th? các liên k?t ??n các trang --%>
-                <% for (int i = 1; i <= totalPages; i++) {%>
-                <a style="color: black;    font-size: x-large;" href="?page=<%= i%>" <%= (i == currentPage) ? "class=\"active\"" : ""%>><%= i%></a>
-                <% } %>
+                    <%-- Hi?n th? các liên k?t ??n các trang --%>
+                    <% for (int i = 1; i <= totalPages; i++) {%>
+                    <a style="color: black;    font-size: x-large;" href="?page=<%= i%>" <%= (i == currentPage) ? "class=\"active\"" : ""%>><%= i%></a>
+                    <% } %>
 
-                <%-- Liên k?t ??n trang ti?p theo (n?u có) --%>
-                <% if (currentPage < totalPages) {%>
-                <a style="color: black;    font-size: x-large;" href="?page=<%= currentPage + 1%>">Next</a>
-                <% } %>
-            </div>
-            <% }%>
+                    <%-- Liên k?t ??n trang ti?p theo (n?u có) --%>
+                    <% if (currentPage < totalPages) {%>
+                    <a style="color: black;    font-size: x-large;" href="?page=<%= currentPage + 1%>">Next</a>
+                    <% } %>
+                </div>
+                <% }%>
             </div>
         </div>
         <!-- music_area end  -->

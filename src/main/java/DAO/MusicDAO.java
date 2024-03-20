@@ -50,14 +50,13 @@ public class MusicDAO {
         ConnectDatabase db = new ConnectDatabase();
         try {
             con = db.connect();
-            String query = "INSERT INTO Music (id, musicName, artist, price, linkToImage, linkToSong) VALUES (?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Music (MusicName, Artist, Price, linkToImage, linkToSong) VALUES (?, ?, ?, ?, ?)";
             stmt = con.prepareStatement(query);
-            stmt.setInt(1, m1.getMusicID());
-            stmt.setString(2, m1.getMusicName());
-            stmt.setString(3, m1.getArtist());
-            stmt.setDouble(4, m1.getPrice());
-            stmt.setString(5, m1.getLinkToImage());
-            stmt.setString(6, m1.getLinkToSong());
+            stmt.setString(1, m1.getMusicName());
+            stmt.setString(2, m1.getArtist());
+            stmt.setDouble(3, m1.getPrice());
+            stmt.setString(4, m1.getLinkToImage());
+            stmt.setString(5, m1.getLinkToSong());
             int rowsAffected = stmt.executeUpdate();
             if (rowsAffected > 0) {
                 System.out.println("Music added successfully!");
@@ -86,7 +85,7 @@ public class MusicDAO {
         ConnectDatabase db = new ConnectDatabase();
         try {
             con = db.connect();
-            String query = "DELETE FROM Music WHERE id = ?";
+            String query = "DELETE FROM Music WHERE [MusicID] = ?";
             stmt = con.prepareStatement(query);
             stmt.setInt(1, musicId);
             int rowsAffected = stmt.executeUpdate();
@@ -117,7 +116,7 @@ public class MusicDAO {
         ConnectDatabase db = new ConnectDatabase();
         try {
             con = db.connect();
-            String query = "UPDATE Music SET musicName = ?, artist = ?, price = ?, linkToImage = ?, linkToSong = ? ,WHERE id = ?";
+            String query = "UPDATE Music SET musicName = ?, artist = ?, price = ?, linkToImage = ?, linkToSong = ? WHERE MusicID = ?";
             stmt = con.prepareStatement(query);
             stmt.setInt(6, m1.getMusicID());
             stmt.setString(1, m1.getMusicName());
@@ -159,6 +158,6 @@ public class MusicDAO {
     }
     public static void main(String[] args) {
         MusicDAO m1 = new MusicDAO();
-        System.out.println(m1.getMusic());
+        m1.deleteMusic(1);
     }
 }

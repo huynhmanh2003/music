@@ -8,6 +8,10 @@
         <filter-name>LoginCheck</filter-name>
         <url-pattern>/music/*</url-pattern>
     </filter-mapping>
+    <filter-mapping>
+        <filter-name>LoginCheck</filter-name>
+        <url-pattern>/crud.jsp</url-pattern>
+    </filter-mapping>
 
     
     <servlet>
