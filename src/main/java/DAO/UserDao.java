@@ -204,6 +204,15 @@ public class UserDao {
         }
         return -1;
     }
+        public static String findrole(String username){
+        UserDao u1 = new UserDao();
+        ArrayList<User> arr = u1.getUser();
+        for(User test : arr){
+            if(test.getUserLoginName().equals(username))
+                return test.getRole();
+        }
+        return null;
+    }
 
     public static void main(String[] args) {
 //        u1.check(new User(0, "huynhmanh2003", "123123", "huynh", "manh", "admin"));
